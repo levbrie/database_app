@@ -15,6 +15,8 @@
   <%= @artwork.value %>
 </p>
 
+<%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => @artwork.id) %>
+
 <p>
   <b>Condition:</b>
   <%= @artwork.condition %>

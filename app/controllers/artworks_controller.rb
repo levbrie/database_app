@@ -80,4 +80,13 @@ class ArtworksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+def show_image
+    @artwork = Artwork.find(params[:id])
+    send_data @artwork.image, :type => 'image/png',:disposition => 'inline'
+end
+
+
 end

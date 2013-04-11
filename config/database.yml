@@ -8,3 +8,10 @@ development:
   password: COMS4i1i1
 
 
+# development:
+#   adapter: oracle_enhanced
+#   host: w4111g.cs.columbia.edu/ADB
+#   port: 1521
+#   database: /ADB4
+#   username: mah2250
+#   password: COMS4i1i1

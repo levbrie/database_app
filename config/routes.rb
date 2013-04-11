@@ -2,6 +2,7 @@ DatabaseApp::Application.routes.draw do
   get "home/index"
   root :to => 'home#index'
 
+  get "artworks/show_image" => "artworks#show_image"
   resources :artworks
 
 
