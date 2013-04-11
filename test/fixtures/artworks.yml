@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  art_id: 1
+  title: MyString
+  value: 1
+  condition: MyString
+  collection_id: 1
+  purchase_date: 2013-04-11
+  creation_date: 2013-04-11
+
+two:
+  art_id: 1
+  title: MyString
+  value: 1
+  condition: MyString
+  collection_id: 1
+  purchase_date: 2013-04-11
+  creation_date: 2013-04-11
