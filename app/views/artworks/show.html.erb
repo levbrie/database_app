@@ -37,6 +37,21 @@
   <%= @artwork.creation_date %>
 </p>
 
+
+<p>
+  <b>Physical Characteristics:</b>
+  <% phys = @artwork.getPhysicalCharacteristics  %>
+  <% if phys %>
+    <ul>
+    <li>Height: <%= phys.height %></li>
+    <li>Width: <%= phys.width %></li>
+    <li>Weight: <%= phys.weight %></li>
+    <li>Volume: <%= phys.volume %></li>
+  </ul>
+  <% end %>
+</p>
+
+
 <p>
   <b>Categories:</b>
   <% @artwork.artworkcategories.each do |ar| %>

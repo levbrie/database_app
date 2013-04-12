@@ -1,0 +1,2 @@
+module PhysicalCharacteristicsHelper
+end

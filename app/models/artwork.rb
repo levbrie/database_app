@@ -50,6 +50,12 @@ class Artwork < ActiveRecord::Base
 	end
 
 
+	def getPhysicalCharacteristics
+		PhysicalCharacteristic.find(self.art_id)
+	end
+
+
+
 
 
 

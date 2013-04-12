@@ -1,4 +1,7 @@
 DatabaseApp::Application.routes.draw do
+  resources :physical_characteristics
+
+
   resources :art_movements
   resources :art_part_of_movements
   resources :categories
