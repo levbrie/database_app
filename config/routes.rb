@@ -1,4 +1,16 @@
 DatabaseApp::Application.routes.draw do
+  resources :artist_referred_bies
+
+
+  resources :reference_materials
+
+
+  resources :artwork_created_bies
+
+
+  resources :artists
+
+
   resources :physical_characteristics
 
 

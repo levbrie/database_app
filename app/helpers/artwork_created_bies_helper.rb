@@ -1,0 +1,2 @@
+module ArtworkCreatedBiesHelper
+end

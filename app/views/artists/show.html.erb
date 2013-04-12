@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Artist:</b>
+  <%= @artist.artist_id %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%= @artist.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @artist.last_name %>
+</p>
+
+<p>
+  <b>Pseudonym:</b>
+  <%= @artist.pseudonym %>
+</p>
+
+<p>
+  <b>Nationality:</b>
+  <%= @artist.nationality %>
+</p>
+
+<p>
+  <b>Birth:</b>
+  <%= @artist.birth.strftime("%Y") %>
+</p>
+
+<p>
+  <b>Death:</b>
+  <%= @artist.death.strftime("%Y") %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @artist.url %>
+</p>
+
+
+<p>
+  <b>Reference Material(s):</b><br>
+    <% @artist.referencedBy.each do |r| %>
+      <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
+    <% end %>
+</p>
+
+<p>
+  <b>Artworks:</b><br>
+
+  <% @artist.artworksIn.each do |a| %>
+  <%= a.title %><br>
+  <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %><br>
+
+  <% end %>
+
+</p>
+
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>

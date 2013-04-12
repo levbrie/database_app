@@ -1,0 +1,31 @@
+<h1>Listing reference_materials</h1>
+
+<table>
+  <tr>
+    <th>Ref</th>
+    <th>Title</th>
+    <th>Abstract</th>
+    <th>Content</th>
+    <th>Url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reference_materials.each do |reference_material| %>
+  <tr>
+    <td><%= reference_material.ref_id %></td>
+    <td><%= reference_material.title %></td>
+    <td><%= reference_material.abstract %></td>
+    <td><%= reference_material.content %></td>
+    <td><%= reference_material.url %></td>
+    <td><%= link_to 'Show', reference_material %></td>
+    <td><%= link_to 'Edit', edit_reference_material_path(reference_material) %></td>
+    <td><%= link_to 'Destroy', reference_material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reference material', new_reference_material_path %>

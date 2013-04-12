@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  artist_id: 1
+  first_name: MyString
+  last_name: MyString
+  pseudonym: MyString
+  nationality: MyString
+  birth: 2013-04-11
+  death: 2013-04-11
+  url: MyString
+
+two:
+  artist_id: 1
+  first_name: MyString
+  last_name: MyString
+  pseudonym: MyString
+  nationality: MyString
+  birth: 2013-04-11
+  death: 2013-04-11
+  url: MyString

@@ -13,6 +13,12 @@ class Artwork < ActiveRecord::Base
 	has_many :art_part_of_movement
 	has_many :art_movements, :through => :art_part_of_movement
 
+	has_many :artwork_created_bies
+	has_many :artists, :through => :artwork_created_bies #bad name because of rails
+
+
+
+
 
 	############  Joins #####################
 
@@ -48,6 +54,26 @@ class Artwork < ActiveRecord::Base
 		end
 		listback
 	end
+
+
+	def artistsBy
+		listback = []
+		@artist = Artist.all
+		@artcreated = ArtworkCreatedBy.all
+		@artist.each do |a|
+			@artcreated.each do |ac|
+				if self.art_id == ac.art_id
+					if ac.artist_id == a.artist_id
+						listback << a
+					end
+				end
+			end
+		end
+		listback
+	end
+
+
+	
 
 
 	def getPhysicalCharacteristics

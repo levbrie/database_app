@@ -11,6 +11,17 @@
 </p>
 
 <p>
+  <b>Artist(s):</b><br>
+  <% @artwork.artistsBy.each do |a| %>
+  
+  <%=link_to("Name: "+ a.first_name+" "+a.last_name, artist_path(a.artist_id), :class=>"") %><br>
+  Pseudonym: <%= a.pseudonym %><br>
+  Birth: <%= a.birth.strftime("%Y") %> Death: <%= a.death.strftime("%Y") %><br>
+  <% end %>
+</p>
+
+
+<p>
   <b>Value:</b>
   <%= @artwork.value %>
 </p>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Ref:</b>
+  <%= @reference_material.ref_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @reference_material.title %>
+</p>
+
+<p>
+  <b>Abstract:</b>
+  <%= @reference_material.abstract %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @reference_material.content %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @reference_material.url %>
+</p>
+
+
+<%= link_to 'Edit', edit_reference_material_path(@reference_material) %> |
+<%= link_to 'Back', reference_materials_path %>
