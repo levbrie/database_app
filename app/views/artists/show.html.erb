@@ -1,132 +1,88 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Artist:</b>
-  <%= @artist.artist_id %>
-</p>
-
-<p>
-  <b>First name:</b>
-  <%= @artist.first_name %>
-</p>
-
-<p>
-  <b>Last name:</b>
-  <%= @artist.last_name %>
-</p>
-
-<p>
-  <b>Pseudonym:</b>
-  <%= @artist.pseudonym %>
-</p>
-
-<p>
-  <b>Nationality:</b>
-  <%= @artist.nationality %>
-</p>
-
-<p>
-  <b>Birth:</b>
-  <%= @artist.birth.strftime("%Y") %>
-</p>
-
-<p>
-  <b>Death:</b>
-  <%= @artist.death.strftime("%Y") %>
-</p>
-
-<p>
-  <b>Url:</b>
-  <%= @artist.url %>
-</p>
-
-
-<p>
-  <b>Reference Material(s):</b><br>
-    <% @artist.referencedBy.each do |r| %>
-      <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
-    <% end %>
-</p>
-
-<p>
-  <b>Artworks:</b><br>
-
-  <% @artist.artworksIn.each do |a| %>
-  <%= a.title %><br>
-  <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %><br>
-
-  <% end %>
-
-</p>
-
-
-<%= link_to 'Edit', edit_artist_path(@artist) %> |
-<%= link_to 'Back', artists_path %>
 
 
     <div id="portfolio_tem">
         <div class="container">
             <div class="section_header">
-                <h3><%= @artist.name %></h3>
+                <h3><%= @artist.first_name %> <%= @artist.last_name %></h3>
             </div>
 
             <div class="span7 left_box">
                 <div class="big">
                     <% @artist.artworksIn.each do |a| %>
-                      <%= a.title %><br>
-                      <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %><br>
+
+                      <% if a != nil %>
+                        <%= image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id), :class => "heighted") %>
+                      <% end %>
                     <% end %>
-                    <img src="img/folio_item1.png">
-                    <img src="img/folio_item2.png">
-                    <img src="img/folio_item1.png">
-                    <img src="img/folio_item2.png">
+
                 </div>
                 <div class="thumbs">
                     <% @artist.artworksIn.each do |a| %>
                     <div class="thumb">
-                      <%= a.title %><br>
-                      <%=image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id), artwork_path(a.art_id), :class=>"") %><br>
+                      <%= image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)) %>
                         <a href="#" class="mask">
                             <div class="more">+</div>
                         </a>
                     </div>
                     <% end %>
-                    <div class="thumb">
-                        <img src="img/folio_thumb1.png">
-                        <a href="#" class="mask">
-                            <div class="more">+</div>
-                        </a>
-                    </div>
-                    <div class="thumb">
-                        <img src="img/folio_thumb2.png">
-                        <a href="#" class="mask">
-                            <div class="more">+</div>
-                        </a>
-                    </div>
-                    <div class="thumb">
-                        <img src="img/folio_thumb1.png">
-                        <a href="#" class="mask">
-                            <div class="more">+</div>
-                        </a>
-                    </div>
-                    <div class="thumb last">
-                        <img src="img/folio_thumb2.png">
-                        <a href="#" class="mask">
-                            <div class="more">+</div>
-                        </a>
-                    </div>
                 </div>
             </div>
 
             <div class="span5 right_box">
-                <h2>Awesome portfolio item</h2>
-                <p>
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected ones humour, or these random words which don’t look even slightly for believable.</p>
+                <h2><%= @artist.first_name %> <%= @artist.last_name %></h2>
+                  <p id="notice"><%= notice %></p>
 
-                <p>
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected ones humour, or these random words which don’t look even slightly for believable. If you are going to use a passage of Lorem Ipsum, you needs to been sure there isn’t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined. There majority have suffered. If you are going to use a passage of Lorem Ipsum, you needs to been sure there isn’t anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined.</p>
-                <p>
-                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected ones humour, or these random words which don’t look even slightly for believable.</p>
+                  <p>
+                    <b>Artist:</b>
+                    <%= @artist.artist_id %>
+                  </p>
+
+                  <p>
+                    <b>First name:</b>
+                    <%= @artist.first_name %>
+                  </p>
+
+                  <p>
+                    <b>Last name:</b>
+                    <%= @artist.last_name %>
+                  </p>
+
+                  <p>
+                    <b>Pseudonym:</b>
+                    <%= @artist.pseudonym %>
+                  </p>
+
+                  <p>
+                    <b>Nationality:</b>
+                    <%= @artist.nationality %>
+                  </p>
+
+                  <p>
+                    <b>Birth:</b>
+                    <%= @artist.birth.strftime("%Y") %>
+                  </p>
+
+                  <p>
+                    <b>Death:</b>
+                    <%= @artist.death.strftime("%Y") %>
+                  </p>
+
+                  <p>
+                    <b>Url:</b>
+                    <%= @artist.url %>
+                  </p>
+
+
+                  <p>
+                    <b>Reference Material(s):</b><br>
+                      <% @artist.referencedBy.each do |r| %>
+                        <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
+                      <% end %>
+                  </p>
+
+                  <%= link_to 'Edit', edit_artist_path(@artist) %> |
+                  <%= link_to 'Back', artists_path %>
+                  <div class="paddedDiv"></div>
             </div>
         </div>
     </div>
