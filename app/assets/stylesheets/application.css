@@ -8,15 +8,14 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
- *= require clean/backgrounds
+ *= require bootstrap_and_overrides
  *= require clean/index
  *= require clean/theme
  *= require clean/portfolio
- *= require clean/index
  *= require clean/portfolio-item
  *= require clean/lib/isotope
  *= require clean/lib/animate
  *= require clean/lib/flexslider
+ *= require_self
+ *= require_tree .
  */

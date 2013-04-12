@@ -16,5 +16,6 @@
 //= require clean/flexslider
 //= require clean/index-slider
 //= require clean/theme
-//= require clean/jquery.isotope.min
+//= require clean/jquery.isotope
+//= require_self
 //= require_tree .

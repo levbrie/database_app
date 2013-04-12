@@ -163,11 +163,7 @@
 .slide .info a:hover {
     opacity: .8;
 }
-.asset,
-.fade {
-    position: absolute;
-    display: none;
-}
+
 #slide-left,
 #slide-right {
     width: 31px;
