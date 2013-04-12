@@ -1,0 +1,43 @@
+<!-- sample modal content -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--   <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="myModalLabel">Modal Heading</h3>
+  </div> -->
+  <div class="modal-body">
+    <h4>ARTCHIVE</h4>
+    <h5>INTERESTED IN GETTING YOUR OWN ARTCHIVE INSTALLED?  LET'S TALK!</h5>
+    <form class="form-horizontal">
+      <div class="control-group">
+        <div class="controls">
+          <input type="text" id="inputName" placeholder="Input Your Full Name">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input type="text" id="inputEmail" placeholder="Your Email">
+        </div>
+      </div>
+      <div class="control-group">
+        <div class="controls">
+          <input type="text" id="inputPhone" placeholder="Your Phone Number">
+        </div>
+      </div>
+      <div class="btn-wrapper">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div> 
+      <button id="close" class="btn" data-dismiss="modal">Close</button>
+      
+    </form>
+  </div>
+</div>
+<!-- <div class="bs-docs-example" style="padding-bottom: 24px;">
+  <a data-toggle="modal" href="#myModal" role="button" class="btn btn-primary btn-large">Contact Us</a>
+</div>
+ -->
+<script type='text/javascript'>
+$('#myModal').modal({
+  keyboard: false,
+  show: false
+})
+</script>

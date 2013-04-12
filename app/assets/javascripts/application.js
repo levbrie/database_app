@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
+//= require clean/flexslider
+//= require clean/index-slider
+//= require clean/theme
 //= require_tree .
