@@ -80,4 +80,13 @@ class OrganizationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
+def show_image
+    @image = Organization.find(params[:id])
+    send_data @image.logo, :type => 'image/png',:disposition => 'inline'
+end
+
+
 end
