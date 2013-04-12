@@ -3,7 +3,7 @@ html {
 }
 body {
 	position: relative;
-	background: #DDDCE2 url(../../images/clean/body_bg.jpg) repeat left top;
+	background: #DDDCE2 url(body_bg.jpg) repeat left top;
 	-webkit-font-smoothing: antialiased;
 	font-family: 'Lato', sans-serif !important;
 	padding-top: 107px;
@@ -300,12 +300,12 @@ header {
 	display: none;
 }
 .socialicons{
-	background: url('../../images/clean/socialicons.png') no-repeat;
+	background: url('socialicons.png') no-repeat;
 	width: 265px;
 	height: 36px;
 }
 .socialicons_h{
-	background: url('../../images/clean/socialicons_h.png') no-repeat;
+	background: url('socialicons_h.png') no-repeat;
 	width: 265px;
 	height: 36px;
 }
