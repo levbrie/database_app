@@ -5,4 +5,22 @@ class Exhibition < ActiveRecord::Base
 
 	has_many :exhibition_referred_bies
 	has_many :reference_materials, :through => :exhibition_referred_bies #bad name because of rails
+
+
+
+	def referencedBy
+		listback = []
+		@ref = ReferenceMaterial.all
+		@exhreffed = ExhibitionReferredBy.all
+		@ref.each do |r|
+			@exhreffed.each do |er|
+				if self.exhibition_id == er.exhibition_id
+					if er.ref_id == r.ref_id
+						listback << r
+					end
+				end
+			end
+		end
+		listback
+	end
 end

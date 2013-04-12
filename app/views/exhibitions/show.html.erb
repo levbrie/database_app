@@ -17,12 +17,12 @@
 
 <p>
   <b>Start date:</b>
-  <%= @exhibition.start_date %>
+  <%= @exhibition.start_date.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
   <b>End date:</b>
-  <%= @exhibition.end_date %>
+  <%= @exhibition.end_date.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
@@ -33,6 +33,13 @@
 <p>
   <b>Organizer:</b>
   <%= @exhibition.organizer %>
+</p>
+
+<p>
+  <b>Reference Material(s):</b><br>
+    <% @exhibition.referencedBy.each do |r| %>
+      <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
+    <% end %>
 </p>
 
 

@@ -46,6 +46,22 @@ def artistsRefferenced
 end
 
 
+def exhibitionsRefferenced
+	listback = []
+	@exhibition = Exhibition.all
+	@exhibitionsreffed =  ExhibitionReferredBy.all
+	@exhibition.each do |e|
+		@exhibitionsreffed.each do |er|
+			if self.ref_id == er.ref_id
+				if er.exhibition_id == e.exhibition_id
+					listback << e
+				end
+			end
+		end
+	end
+	listback
+end
+
 
 
 

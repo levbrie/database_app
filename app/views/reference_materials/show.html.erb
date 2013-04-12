@@ -42,7 +42,9 @@
 
 <p>
   <b>Exhibitions Referrenced:</b><br>
-  
+  <% @reference_material.exhibitionsRefferenced.each do |a| %>
+      <%=link_to("Title: "+ a.title+", "+ a.start_date.strftime("%Y") + "-" + a.end_date.strftime("%Y"), exhibition_path(a.exhibition_id), :class=>"") %><br>
+    <% end %>
 </p>
 
 

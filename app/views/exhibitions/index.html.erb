@@ -19,8 +19,8 @@
     <td><%= exhibition.exhibition_id %></td>
     <td><%= exhibition.title %></td>
     <td><%= exhibition.description %></td>
-    <td><%= exhibition.start_date %></td>
-    <td><%= exhibition.end_date %></td>
+    <td><%= exhibition.start_date.strftime("%d %b %Y") %></td>
+    <td><%= exhibition.end_date.strftime("%d %b %Y") %></td>
     <td><%= exhibition.location %></td>
     <td><%= exhibition.organizer %></td>
     <td><%= link_to 'Show', exhibition %></td>
