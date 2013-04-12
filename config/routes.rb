@@ -1,23 +1,23 @@
 DatabaseApp::Application.routes.draw do
-  resources :organizations
+  
 
 
-  resources :collections
 
-
-  resources :artwork_featured_in_exhibitions
-
-
-  resources :exhibition_referred_bies
-
-
-  resources :exhibitions
 
 
   resources :art_referred_bies
-
-
   resources :artist_referred_bies
+  resources :artwork_featured_in_exhibitions
+  resources :collections
+  resources :exhibitions
+  resources :exhibition_referred_bies
+
+  get "organizations/show_image" => "organizations#show_image"
+  resources :organizations
+
+
+
+
 
 
   resources :reference_materials
@@ -40,8 +40,6 @@ DatabaseApp::Application.routes.draw do
   get "home/index"
   root :to => 'home#index'
 
-
-  get "organizations/show_image" => "organizations#show_image"
   get "artworks/show_image" => "artworks#show_image"
   resources :artworks
 
