@@ -1,4 +1,7 @@
 DatabaseApp::Application.routes.draw do
+  resources :artwork_featured_in_exhibitions
+
+
   resources :exhibition_referred_bies
 
 

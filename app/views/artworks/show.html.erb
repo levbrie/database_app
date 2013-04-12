@@ -53,7 +53,7 @@
   <b>Physical Characteristics:</b>
   <% phys = @artwork.getPhysicalCharacteristics  %>
   <% if phys %>
-    <ul>
+  <ul>
     <li>Height: <%= phys.height %></li>
     <li>Width: <%= phys.width %></li>
     <li>Weight: <%= phys.weight %></li>
@@ -64,12 +64,20 @@
 
 <p>
   <b>Reference Material(s):</b><br>
-    <% @artwork.referencedBy.each do |r| %>
-      <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
-    <% end %>
+  <% @artwork.referencedBy.each do |r| %>
+  <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
+  <% end %>
 </p>
 
+
+
+
 <p>
+  <b>Exhibitions:</b><br>
+  <% @artwork.exhibitedIn.each do |e| %>
+  Title: <%=link_to(e.title + ", " + e.start_date.strftime("%d %b %Y") + " - " + e.end_date.strftime("%d %b %Y"), exhibition_path(e.exhibition_id), :class=>"") %><br>
+  <% end %>
+</p>
 
 <p>
   <b>Categories:</b>

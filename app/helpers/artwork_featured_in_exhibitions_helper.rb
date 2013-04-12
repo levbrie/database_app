@@ -1,0 +1,2 @@
+module ArtworkFeaturedInExhibitionsHelper
+end

@@ -23,4 +23,22 @@ class Exhibition < ActiveRecord::Base
 		end
 		listback
 	end
+
+
+	def artworksIn
+		listback = []
+		@art = Artwork.all
+		@featured = ArtworkFeaturedInExhibition.all
+		@art.each do |a|
+			@featured.each do |f|
+				if self.exhibition_id == f.exhibition_id
+					if f.art_id == a.art_id
+						listback << a
+					end
+				end
+			end
+		end
+		listback
+	end
+
 end

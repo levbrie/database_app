@@ -76,20 +76,37 @@ class Artwork < ActiveRecord::Base
 
 
 	def referencedBy
-	listback = []
-	@ref = ReferenceMaterial.all
-	@artreffed = ArtReferredBy.all
-	@ref.each do |r|
-		@artreffed.each do |ar|
-			if self.art_id == ar.art_id
-				if ar.ref_id == r.ref_id
-					listback << r
+		listback = []
+		@ref = ReferenceMaterial.all
+		@artreffed = ArtReferredBy.all
+		@ref.each do |r|
+			@artreffed.each do |ar|
+				if self.art_id == ar.art_id
+					if ar.ref_id == r.ref_id
+						listback << r
+					end
 				end
 			end
 		end
+		listback
 	end
-	listback
-end
+
+
+		def exhibitedIn
+		listback = []
+		@exh = Exhibition.all
+		@featured = ArtworkFeaturedInExhibition.all
+		@exh.each do |e|
+			@featured.each do |f|
+				if self.art_id == f.art_id
+					if f.exhibition_id == e.exhibition_id
+						listback << e
+					end
+				end
+			end
+		end
+		listback
+	end
 
 	
 
