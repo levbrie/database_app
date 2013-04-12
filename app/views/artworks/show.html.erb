@@ -38,5 +38,11 @@
 </p>
 
 
+  <% @artwork.cats.each do |ar| %>
+    <%= ar.cat_name %>
+  <% end %>
+
+
+
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
 <%= link_to 'Back', artworks_path %>

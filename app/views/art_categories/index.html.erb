@@ -1,0 +1,22 @@
+<h1>Listing art_categories</h1>
+
+<table>
+  <tr>
+    <th>Art</th>
+    <th>Cat name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @art_categories.each do |art_category| %>
+  <tr>
+    <td><%= art_category.art_id %></td>
+    <td><%= art_category.cat_name %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Art category', new_art_category_path %>

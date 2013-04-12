@@ -1,4 +1,10 @@
 DatabaseApp::Application.routes.draw do
+  resources :art_categories
+
+
+  resources :categories
+
+
   get "home/index"
   root :to => 'home#index'
 
