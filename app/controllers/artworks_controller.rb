@@ -24,6 +24,8 @@ class ArtworksController < ApplicationController
   # GET /artworks/new.json
   def new
     @artwork = Artwork.new
+    @artwork.physical_characteristic = PhysicalCharacteristic.new
+    @artwork.physical_characteristic.art_id = @artwork.art_id
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @artwork }
@@ -39,7 +41,7 @@ class ArtworksController < ApplicationController
   # POST /artworks.json
   def create
     @artwork = Artwork.new(params[:artwork])
-
+    #@collection = Collection.new(params[:artwork])
     respond_to do |format|
       if @artwork.save
         format.html { redirect_to @artwork, notice: 'Artwork was successfully created.' }

@@ -3,9 +3,10 @@ DatabaseApp::Application.routes.draw do
 
 
 
-
-
+  get "artworks/show_image" => "artworks#show_image"
+  resources :artworks
   resources :art_referred_bies
+  resources :artists
   resources :artist_referred_bies
   resources :artwork_featured_in_exhibitions
   resources :collections
@@ -26,7 +27,7 @@ DatabaseApp::Application.routes.draw do
   resources :artwork_created_bies
 
 
-  resources :artists
+
 
 
   resources :physical_characteristics
@@ -40,8 +41,7 @@ DatabaseApp::Application.routes.draw do
   get "home/index"
   root :to => 'home#index'
 
-  get "artworks/show_image" => "artworks#show_image"
-  resources :artworks
+
 
 
   # The priority is based upon order of creation:
