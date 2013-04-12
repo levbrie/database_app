@@ -1,0 +1,41 @@
+<%= form_for(@art_movement) do |f| %>
+  <% if @art_movement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@art_movement.errors.count, "error") %> prohibited this art_movement from being saved:</h2>
+
+      <ul>
+      <% @art_movement.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :movement_id %><br />
+    <%= f.number_field :movement_id %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :region %><br />
+    <%= f.text_field :region %>
+  </div>
+  <div class="field">
+    <%= f.label :year_start %><br />
+    <%= f.number_field :year_start %>
+  </div>
+  <div class="field">
+    <%= f.label :year_end %><br />
+    <%= f.number_field :year_end %>
+  </div>
+  <div class="field">
+    <%= f.label :time_period_name %><br />
+    <%= f.text_field :time_period_name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

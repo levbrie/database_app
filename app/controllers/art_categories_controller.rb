@@ -1,25 +1,5 @@
 class ArtCategoriesController < ApplicationController
-  # GET /art_categories
-  # GET /art_categories.json
-  def index
-    @art_categories = ArtCategory.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @art_categories }
-    end
-  end
-
-  # GET /art_categories/1
-  # GET /art_categories/1.json
-  def show
-    @art_category = ArtCategory.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @art_category }
-    end
-  end
 
   # GET /art_categories/new
   # GET /art_categories/new.json

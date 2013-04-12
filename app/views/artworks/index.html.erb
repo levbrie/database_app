@@ -21,8 +21,8 @@
     <td><%= artwork.value %></td>
     <td><%= artwork.condition %></td>
     <td><%= artwork.collection_id %></td>
-    <td><%= artwork.purchase_date %></td>
-    <td><%= artwork.creation_date %></td>
+    <td><%= artwork.purchase_date.strftime("%Y") %></td>
+    <td><%= artwork.creation_date.strftime("%Y") %></td>
     <td><%= link_to 'Show', artwork %></td>
     <td><%= link_to 'Edit', edit_artwork_path(artwork) %></td>
     <td><%= link_to 'Destroy', artwork, method: :delete, data: { confirm: 'Are you sure?' } %></td>

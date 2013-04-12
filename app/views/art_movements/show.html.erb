@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Movement:</b>
+  <%= @art_movement.movement_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @art_movement.title %>
+</p>
+
+<p>
+  <b>Region:</b>
+  <%= @art_movement.region %>
+</p>
+
+<p>
+  <b>Year start:</b>
+  <%= @art_movement.year_start %>
+</p>
+
+<p>
+  <b>Year end:</b>
+  <%= @art_movement.year_end %>
+</p>
+
+<p>
+  <b>Time period name:</b>
+  <%= @art_movement.time_period_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_art_movement_path(@art_movement) %> |
+<%= link_to 'Back', art_movements_path %>

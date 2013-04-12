@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  movement_id: 1
+  title: MyString
+  region: MyString
+  year_start: 1
+  year_end: 1
+  time_period_name: MyString
+
+two:
+  movement_id: 1
+  title: MyString
+  region: MyString
+  year_start: 1
+  year_end: 1
+  time_period_name: MyString

@@ -37,11 +37,21 @@
   <%= @artwork.creation_date %>
 </p>
 
+<p>
+  <b>Categories:</b>
+  <% @artwork.artworkcategories.each do |ar| %>
+  <%= ar.cat_name %>
+  <% end %>
+</p>
 
-  <% @artwork.cats.each do |ar| %>
-    <%= ar.cat_name %>
+<p>
+  <b>Movements:</b>
+
+  <% @artwork.artworkmovements.each do |am| %>
+  <%= am.title %>
   <% end %>
 
+</p>
 
 
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |

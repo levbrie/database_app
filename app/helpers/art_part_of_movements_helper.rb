@@ -1,0 +1,2 @@
+module ArtPartOfMovementsHelper
+end
