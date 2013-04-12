@@ -4,8 +4,16 @@ class Organization < ActiveRecord::Base
 
 	has_many :exhibitions
 
-
-
+	def hostedExhibitions
+		listback = []
+		@exh = Exhibition.all
+		@exh.each do |e|
+			if self.org_id == e.organizer
+				listback << e
+			end
+		end
+		listback
+	end
 
 
 

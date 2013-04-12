@@ -22,7 +22,12 @@
 
 
 
-
+<p>
+	<b>Exhibition(s):</b><br>
+  	<% @organization.hostedExhibitions.each do |e| %>
+  		<%=link_to(e.title, exhibition_path(e.exhibition_id), :class=>"") %><br>
+  	<% end %>
+</p>
 
 
 
