@@ -16,6 +16,8 @@
  *= require clean/lib/isotope
  *= require clean/lib/animate
  *= require clean/lib/flexslider
+ *= require royalslider/royalslider
+ *= require royalslider/rs-minimal-white
  *= require_self
  *= require_tree .
  */
