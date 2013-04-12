@@ -129,6 +129,10 @@ class Artwork < ActiveRecord::Base
 
 
 
+	def getThreeRand
+		Artwork.find(:all, :limit => 3)
+	end
+
 
 
 

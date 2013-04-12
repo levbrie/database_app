@@ -1,105 +1,118 @@
+
         <%= render 'royalslider' %>
+	  <div class="banner home">
+       <section id="feature_slider" class="">
+	        <!-- 
+	            Each slide is composed by <img> and .info
+	            - .info's position is customized with css in index.css
+	            - each <img> parallax effect is declared by the following params inside its class:
+	            
+	            example: class="asset left-472 sp600 t120 z3"
+	            left-472 means left: -472px from the center
+	            sp600 is speed transition
+	            t120 is top to 120px
+	            z3 is z-index to 3
+	            Note: Maintain this order of params
 
-        <div id="showcase">
-            <div class="container">
-                <div class="section_header">
-                    <h3>Our Services</h3>
-                </div>            
-                <div class="row feature_wrapper">
-                    <!-- Features Row -->
-                    <div class="features_op1_row">
-                        <!-- Feature -->
-                        <div class="span4 feature first">
-                            <div class="img_box">
-                                <a href="services.html">
-                                	<%= image_tag ("clean/service1.png") %>
-                                    <span class="circle"> 
-                                        <span class="plus">&#43;</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="text">
-                                <h6>Responsive theme</h6>
-                                <p>
-                                    There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Feature -->
-                        <div class="span4 feature">
-                            <div class="img_box">
-                                <a href="services.html">
-                                    <%= image_tag ("clean/service2.png") %>
-                                    <span class="circle"> 
-                                        <span class="plus">&#43;</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="text">
-                                <h6>Easy customization</h6>
-                                <p>
-                                    There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                                </p>
-                            </div>
-                        </div>
-                        <!-- Feature -->
-                        <div class="span4 feature last">
-                            <div class="img_box">
-                                <a href="services.html">
-                                    <%= image_tag ("clean/service3.png") %>
-                                    <span class="circle"> 
-                                        <span class="plus">&#43;</span>
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="text">
-                                <h6>Made with love</h6>
-                                <p>
-                                    There are many variations of passages of generators on the  embarrassing hidden in   content here making it look like.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+	            For the backgrounds, you can combine from the bgs folder :D
+	        -->
+            <% Artwork.all.each do |artwork| %>
+            <% if defined?(artwork) %>
+            <article class="slide" id="<%= artwork.id %>"style="background: url(backgrounds/aqua.jpg);">
+               <img class="asset left-30 sp600 t120 z1" src="/assets/clean/slides/scene1/macbook.png" />
+               <div class="info">
+                <div class="center hero-unit-transparent">
+                    <h1>Artchive</h1>
+                    <%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => artwork.id) %>
+                    <%= link_to artwork.title, artwork %>
+                    <h2>
+                        <%= artwork.value %>
+                    </h2>
+                    <p><%= artwork.purchase_date %></p>
+                    <a href="#feature-set" class="down-tab center btn btn-primary btn-large" name="feature-set">
+                        LEARN MORE
+                    </a>
+                </div>                  
+            </div>
+        </article> 
+        <% end %> 
+        <% end %>    
+    </section>	  
+</div>
+
+
+
+<div id="showcase">
+    <div class="container">
+        <div class="section_header">
+            <h3>Recent Artwork</h3>
+        </div>            
+        <div class="row feature_wrapper">
+   
+            <!-- Features Row -->
+            <div class="features_op1_row">
+                <!-- Feature -->
+                <% Artwork.find(:all, :limit => 3).each do |a| %>
+                <div class="span4 feature first">
+                    <div class="img_box">
+                        <a href=<%= artwork_path(a.art_id)%>>
+                           <%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => a.id) %>
+                           <span class="circle"> 
+                            <span class="plus">&#43;</span>
+                        </span>
+                    </a>
+                </div>
+                <div class="text">
+                    <h6><%= a.title %></h6>
+                    <p>
+                        <%= a.creation_date.strftime("%Y") %>
+
+                    </p>
                 </div>
             </div>
+            <% end %>
+
         </div>
+    </div>
+</div>
+</div>
 
 
 
 
-    <div id="features">
-            <div class="container">
-                <div class="section_header">
-                    <h3>Features</h3>
-                </div> 
-                <div class="row feature">
-                    <div class="span6">
-                        <%= image_tag ("clean/showcase1.png") %>
-                    </div>
-                    <div class="span6 info">
-                        <h3>
-                            <img src=url(images/clean/features-ico1.png) />
-                            Beautiful on all devices
-                        </h3>
-                        <p>
-                            The database and admin functionality have been optimized for mobile devices, so your users can view your galleries from anywhere, and you can perform data entry when you want, where you want, how you want. 
-                        </p>
-                    </div>
-                </div>
-                <div class="row feature ss">
-                    <div class="span6 info">
-                        <h3>
-                        	<%= image_tag ("clean/features-ico3.png") %>
-
-                            Dynamic Galleries
-                        </h3>
-                        <p>
-                            Galleries are built to take individual data attributes into account, and the isotope.js library enables us to support dynamic gallery viewing by category.
-                        </p>
-                    </div>
-                    <div class="span6">
-                    	<%= image_tag("clean/showcase2.png", :class => "pull-right") %>
-                    </div>
-                </div>
+<div id="features">
+    <div class="container">
+        <div class="section_header">
+            <h3>Features</h3>
+        </div> 
+        <div class="row feature">
+            <div class="span6">
+                <%= image_tag ("clean/showcase1.png") %>
+            </div>
+            <div class="span6 info">
+                <h3>
+                    <img src=url(images/clean/features-ico1.png) />
+                    Beautiful on all devices
+                </h3>
+                <p>
+                    The database and admin functionality have been optimized for mobile devices, so your users can view your galleries from anywhere, and you can perform data entry when you want, where you want, how you want. 
+                </p>
             </div>
         </div>
+        <div class="row feature ss">
+            <div class="span6 info">
+                <h3>
+                   <%= image_tag ("clean/features-ico3.png") %>
+
+                   Dynamic Galleries
+               </h3>
+               <p>
+                Galleries are built to take individual data attributes into account, and the isotope.js library enables us to support dynamic gallery viewing by category.
+            </p>
+        </div>
+        <div class="span6">
+           <%= image_tag("clean/showcase2.png", :class => "pull-right") %>
+       </div>
+   </div>
+</div>
+</div>
