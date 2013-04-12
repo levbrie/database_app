@@ -22,8 +22,27 @@
 
 
 
+<p>
+	<b>Exhibition(s):</b><br>
+  	<% @organization.hostedExhibitions.each do |e| %>
+  		<%=link_to(e.title, exhibition_path(e.exhibition_id), :class=>"") %><br>
+  	<% end %>
+</p>
 
 
+<p>
+	<b>Owned Collection(s):</b><br>
+  	<% @organization.ownedCollections.each do |c| %>
+  		<%=link_to(c.title, collection_path(c.collection_id), :class=>"") %><br>
+  	<% end %>
+</p>
+
+<p>
+	<b>Borrowed Collection(s):</b><br>
+  	<% @organization.borrowedCollections.each do |c| %>
+  		<%=link_to(c.title, collection_path(c.collection_id), :class=>"") %><br>
+  	<% end %>
+</p>
 
 
 
