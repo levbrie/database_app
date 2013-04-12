@@ -14,4 +14,9 @@
  *= require clean/index
  *= require clean/theme
  *= require clean/portfolio
+ *= require clean/index
+ *= require clean/portfolio-item
+ *= require clean/lib/isotope
+ *= require clean/lib/animate
+ *= require clean/lib/flexslider
  */
