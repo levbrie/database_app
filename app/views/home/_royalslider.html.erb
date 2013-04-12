@@ -2,9 +2,13 @@
 
 </div>
 <div id="slider-with-blocks-1" class="royalSlider rsMinW">
-  <div class="rsContent slide1" style="background: url('assets/backgrounds/aqua.jpg')">
+  
+  <% Artwork.find(:all, :limit => 6).each_with_index do |art, i| %>
+
+
+  <div class="rsContent slide<%= i %>" style="background: url('<%= url_for(:controller => "artworks", :action => "show_image", :id => art.art_id ) %>')">
     <div class="bContainer">
-      <span class="rsABlock txtCent blockHeadline">ARTCHIVE</span>
+      <span class="rsABlock txtCent blockHeadline"><%= art.title %></span>
 <!--       <span class="rsABlock txtCent mBottom20 grayText" data-move-effect="none">Click here to learn more.</span> -->
       <div class="btn-wrapper">
         <a href="#feature-set" class="down-tab rsABlock btnCent center btn btn-primary btn-large" name="feature-set">
@@ -16,37 +20,5 @@
       <a href="#">Lars Krandel</a>
     </div>
   </div>
-  <div class="rsContent slide2">
-    <div class="bContainer">
-      <strong class="rsABlock txtCent blockSubHeadline" data-move-effect="none">The Highest Quality Images</strong>
-<!--       <span class="rsABlock txtCent" data-move-effect="top" >from top  ↓</span>
-      <span class="rsABlock txtCent" data-move-effect="bottom">from bottom ↑</span>
-      <span class="rsABlock txtCent" data-move-effect="left">from left →</span> -->
-<!--       <span class="rsABlock txtCent mBottom20" data-move-effect="top">The most impressive values</span> -->
-<!--       <span class="rsABlock txtCent" data-move-effect="none">just fade</span> -->
-      <div class="btn-wrapper">
-        <a data-toggle="modal" href="#myModal" class="rsABlock btnCent btn btn-primary btn-large" data-move-effect="top" name="feature-set">
-            Learn More
-        </a> 
-      </div>
-    </div>
-  </div>
-  <div class="rsContent slide3">
-    <div class="bContainer">
-      <strong class="rsABlock txtCent blockSubHeadline" data-move-effect="none">The Highest Quality Images</strong>
-<!--       <span class="rsABlock txtCent" data-move-effect="top" >from top  ↓</span>
-      <span class="rsABlock txtCent" data-move-effect="bottom">from bottom ↑</span>
-      <span class="rsABlock txtCent" data-move-effect="left">from left →</span> -->
-<!--       <span class="rsABlock txtCent mBottom20" data-move-effect="top">The most impressive values</span> -->
-<!--       <span class="rsABlock txtCent" data-move-effect="none">just fade</span> -->
-      <div class="btn-wrapper">
-        <a data-toggle="modal" href="#myModal" class="rsABlock btnCent btn btn-primary btn-large" data-move-effect="top" name="feature-set">
-            Learn More
-        </a> 
-      </div>
-    </div>
-    <div class="photoCopy">Photo Taken with a Rokinon ZLR by  
-      <a href="#">Jamie Brandon</a>
-    </div>
-  </div>
+  <% end %>
 </div>
