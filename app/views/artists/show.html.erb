@@ -9,16 +9,17 @@
             <div class="span7 left_box">
                 <div class="big">
                     <% @artist.artworksIn.each do |a| %>
-                      <%= a.title %><br>
-                      <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %><br>
+
+                      <% if a != nil %>
+                        <%= image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id), :class => "heighted") %>
+                      <% end %>
                     <% end %>
 
                 </div>
                 <div class="thumbs">
                     <% @artist.artworksIn.each do |a| %>
                     <div class="thumb">
-                      <%= a.title %><br>
-                      <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"thumb") %><br>
+                      <%= image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)) %>
                         <a href="#" class="mask">
                             <div class="more">+</div>
                         </a>
@@ -79,21 +80,9 @@
                       <% end %>
                   </p>
 
-                  <p>
-                    <b>Artworks:</b><br>
-
-                    <% @artist.artworksIn.each do |a| %>
-                    <%= a.title %><br>
-                    <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %><br>
-
-                    <% end %>
-
-                  </p>
-
-
                   <%= link_to 'Edit', edit_artist_path(@artist) %> |
                   <%= link_to 'Back', artists_path %>
-
+                  <div class="paddedDiv"></div>
             </div>
         </div>
     </div>
