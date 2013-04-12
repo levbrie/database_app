@@ -1,6 +1,7 @@
-<h1>Listing organizations</h1>
-
-<table>
+<div class="container">
+  <h1>Listing organizations</h1>
+<table class="table table-striped table-hover table-bordered">
+  <thead>
   <tr>
     <th>Org</th>
     <th>Title</th>
@@ -10,7 +11,8 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @organizations.each do |organization| %>
   <tr>
     <td><%= organization.org_id %></td>
@@ -22,8 +24,14 @@
     <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Organization', new_organization_path %>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_organization_path,
+            :class => 'btn btn-primary' %>
+</div>
+

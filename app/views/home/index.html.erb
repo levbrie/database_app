@@ -16,27 +16,29 @@
 	        -->
         <% Artwork.all.each do |artwork| %>
         	<% if defined?(artwork) %>
-	        <article class="slide" id="showcasing" style="background: none;">
+	        <article class="slide" id="<%= artwork.id %>"style="background: none;">
 
 
 
 	            <!-- <img class="asset left-30 sp600 t120 z1" src="/assets/clean/slides/scene3/canon.png" /> -->
 
-	              
-	            
-	          	<div class="center hero-unit-transparent">
+	           <div class="info">
+                    <div class="center hero-unit-transparent">
 
-								<h1>Artchive</h1>
-								<%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => artwork.id) %>
-								<%= link_to artwork.title, artwork %>
-								<h2>
-									<%= artwork.value %>
-								</h2>
-								<p><%= artwork.purchase_date %></p>
-								<a href="#feature-set" class="down-tab center btn btn-primary btn-large" name="feature-set">
-									LEARN MORE
-								</a>
-							</div>
+                        <h1>Artchive</h1>
+                        <%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => artwork.id) %>
+                        <%= link_to artwork.title, artwork %>
+                        <h2>
+                            <%= artwork.value %>
+                        </h2>
+                        <p><%= artwork.purchase_date %></p>
+                        <a href="#feature-set" class="down-tab center btn btn-primary btn-large" name="feature-set">
+                            LEARN MORE
+                        </a>
+                    </div>                  
+               </div>
+	            
+
 	        </article> 
 	        <% end %> 
         <% end %>    
