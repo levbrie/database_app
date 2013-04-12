@@ -25,12 +25,12 @@
                         <%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => artwork.id) %>
                         <a href="<%= artwork_path(artwork) %>" class="mask">
                             <h3><%= artwork.title %></h3>
-                            <small>
+                            <!-- <small>
                                 Purchased on <%= artwork.purchase_date.strftime("%Y") %><br>
                                 Condition: <%= artwork.condition %><br>
                                 Id: <%= artwork.collection_id %><br>
                                 Value: <%= artwork.value %><br>
-                            </small>
+                            </small> -->
                             <div class="more">+</div>
                         </a>
                     </div>
