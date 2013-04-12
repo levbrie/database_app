@@ -208,23 +208,23 @@ var center = $(window).width() / 2;
 $(document).ready(function () {
     function d() {
         $(".slide.active img").each(function () {
-            var g = parseInt($(this).attr("class").split(" ")[1].replace("left", ""));
-            var i = g + center;
-            var h = parseInt($(this).attr("class").split(" ")[3].replace("t", ""));
-            var f = parseInt($(this).attr("class").split(" ")[4].replace("z", ""));
-            if ($(this).hasClass("fade")) {
-                $(this).css({
-                    left: i,
-                    top: h,
-                    "z-index": f
-                })
-            } else {
-                $(this).css({
-                    left: i,
-                    top: h,
-                    "z-index": f
-                }).show()
-            }
+            // var g = parseInt($(this).attr("class").split(" ")[1].replace("left", ""));
+            // var i = g + center;
+            // var h = parseInt($(this).attr("class").split(" ")[3].replace("t", ""));
+            // var f = parseInt($(this).attr("class").split(" ")[4].replace("z", ""));
+            // if ($(this).hasClass("fade")) {
+            //     $(this).css({
+            //         left: i,
+            //         top: h,
+            //         "z-index": f
+            //     })
+            // } else {
+            //     $(this).css({
+            //         left: i,
+            //         top: h,
+            //         "z-index": f
+            //     }).show()
+            // }
         });
         setTimeout(function () {
             $(".slide.active img.fade,.slide.active .info").fadeIn(600, "easeInOutQuad", function () {
@@ -245,34 +245,34 @@ $(document).ready(function () {
 
         function j() {
             $(".slide.active img").each(function () {
-                var l = parseInt($(this).attr("class").split(" ")[1].replace("left", ""));
-                var q = l + center;
-                // var p = parseInt($(this).attr("class").split(" ")[2].replace("st", ""));
-                var p = 400;
-                var n = parseInt($(this).attr("class").split(" ")[2].replace("sp", ""));
-                var o = parseInt($(this).attr("class").split(" ")[3].replace("t", ""));
-                var k = parseInt($(this).attr("class").split(" ")[4].replace("z", ""));
-                if ($(this).hasClass("fade")) {
-                    $(this).css({
-                        left: q,
-                        top: o,
-                        "z-index": k
-                    })
-                } else {
-                    if ($("#feature_slider").hasClass("scrollLeft")) {
-                        var m = -$(this).width() - p
-                    } else {
-                        var m = $(window).width() + p
-                    }
-                    $(this).css({
-                        left: m,
-                        top: o,
-                        "z-index": k
-                    }).show();
-                    $(this).animate({
-                        left: q
-                    }, n, "easeOutQuad")
-                }
+                // var l = parseInt($(this).attr("class").split(" ")[1].replace("left", ""));
+                // var q = l + center;
+                // // var p = parseInt($(this).attr("class").split(" ")[2].replace("st", ""));
+                // var p = 400;
+                // var n = parseInt($(this).attr("class").split(" ")[2].replace("sp", ""));
+                // var o = parseInt($(this).attr("class").split(" ")[3].replace("t", ""));
+                // var k = parseInt($(this).attr("class").split(" ")[4].replace("z", ""));
+                // if ($(this).hasClass("fade")) {
+                //     $(this).css({
+                //         left: q,
+                //         top: o,
+                //         "z-index": k
+                //     })
+                // } else {
+                //     if ($("#feature_slider").hasClass("scrollLeft")) {
+                //         var m = -$(this).width() - p
+                //     } else {
+                //         var m = $(window).width() + p
+                //     }
+                //     $(this).css({
+                //         left: m,
+                //         top: o,
+                //         "z-index": k
+                //     }).show();
+                //     $(this).animate({
+                //         left: q
+                //     }, n, "easeOutQuad")
+                // }
             });
             setTimeout(function () {
                 $(".slide.active img.fade,.slide.active .info").fadeIn(600, "easeInOutQuad", function () {
