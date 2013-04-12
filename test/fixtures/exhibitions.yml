@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  exhibition_id: 1
+  title: MyString
+  description: MyString
+  start_date: 2013-04-11
+  end_date: 2013-04-11
+  location: MyString
+  organizer: 1
+
+two:
+  exhibition_id: 1
+  title: MyString
+  description: MyString
+  start_date: 2013-04-11
+  end_date: 2013-04-11
+  location: MyString
+  organizer: 1

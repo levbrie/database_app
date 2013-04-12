@@ -1,0 +1,35 @@
+<h1>Listing exhibitions</h1>
+
+<table>
+  <tr>
+    <th>Exhibition</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Location</th>
+    <th>Organizer</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @exhibitions.each do |exhibition| %>
+  <tr>
+    <td><%= exhibition.exhibition_id %></td>
+    <td><%= exhibition.title %></td>
+    <td><%= exhibition.description %></td>
+    <td><%= exhibition.start_date %></td>
+    <td><%= exhibition.end_date %></td>
+    <td><%= exhibition.location %></td>
+    <td><%= exhibition.organizer %></td>
+    <td><%= link_to 'Show', exhibition %></td>
+    <td><%= link_to 'Edit', edit_exhibition_path(exhibition) %></td>
+    <td><%= link_to 'Destroy', exhibition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Exhibition', new_exhibition_path %>
