@@ -16,6 +16,29 @@ class Organization < ActiveRecord::Base
 	end
 
 
+	def ownedCollections
+		listback = []
+		@col = Collection.all
+		@col.each do |c|
+			if self.org_id == c.belongs_id
+				listback << c
+			end
+		end
+		listback
+	end
+
+	def borrowedCollections
+		listback = []
+		@col = Collection.all
+		@col.each do |c|
+			if self.org_id == c.loaned_id
+				listback << c
+			end
+		end
+		listback
+	end
+
+
 
 
 

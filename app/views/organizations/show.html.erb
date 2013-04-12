@@ -30,6 +30,20 @@
 </p>
 
 
+<p>
+	<b>Owned Collection(s):</b><br>
+  	<% @organization.ownedCollections.each do |c| %>
+  		<%=link_to(c.title, collection_path(c.collection_id), :class=>"") %><br>
+  	<% end %>
+</p>
+
+<p>
+	<b>Borrowed Collection(s):</b><br>
+  	<% @organization.borrowedCollections.each do |c| %>
+  		<%=link_to(c.title, collection_path(c.collection_id), :class=>"") %><br>
+  	<% end %>
+</p>
+
 
 
 <%= link_to 'Edit', edit_organization_path(@organization) %> |
