@@ -1,24 +1,28 @@
-<div id="blackbox"> 
 
-</div>
+
 <div id="slider-with-blocks-1" class="royalSlider rsMinW">
   
   <% Artwork.find(:all, :limit => 6).each_with_index do |art, i| %>
 
+    <% if defined?(art) %>
+      <div class="rsContent slide<%= i %>" style="background: url('<%= url_for(:controller => "artworks", :action => "show_image", :id => art.art_id ) %>')">
+        <div class="bContainer">
+          <span class="rsABlock txtCent blockHeadline"><%= art.title %></span>
+    <!--       <span class="rsABlock txtCent mBottom20 grayText" data-move-effect="none">Click here to learn more.</span> -->
+          <div class="btn-wrapper">
+            <a href="#feature-set" class="down-tab rsABlock btnCent center btn btn-primary btn-large" name="feature-set">
+              More Featured Artworks
+            </a>       
+          </div>
+        </div>
+        <div class="photoCopy"><b>Artist(s): </b>
+          <% art.artistsBy.each do |a| %>
+          
+          <%=link_to("Name: "+ a.first_name+" "+a.last_name, artist_path(a.artist_id), :class=>"") %>
 
-  <div class="rsContent slide<%= i %>" style="background: url('<%= url_for(:controller => "artworks", :action => "show_image", :id => art.art_id ) %>')">
-    <div class="bContainer">
-      <span class="rsABlock txtCent blockHeadline"><%= art.title %></span>
-<!--       <span class="rsABlock txtCent mBottom20 grayText" data-move-effect="none">Click here to learn more.</span> -->
-      <div class="btn-wrapper">
-        <a href="#feature-set" class="down-tab rsABlock btnCent center btn btn-primary btn-large" name="feature-set">
-          View Featured Products
-        </a>       
+          <% end %>
+        </div>
       </div>
-    </div>
-    <div class="photoCopy">Photo Taken with a Rokinon ZLR by  
-      <a href="#">Lars Krandel</a>
-    </div>
-  </div>
+    <% end %>
   <% end %>
 </div>
