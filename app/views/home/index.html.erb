@@ -15,8 +15,11 @@
 	            For the backgrounds, you can combine from the bgs folder :D
 	        -->
         <% Artwork.all.each do |artwork| %>
-	        <article class="slide" id="showcasing" style="background: url(images/backgrounds/aqua.jpg)	        
+	        <article class="slide" id="showcasing" style="background: url(<%= url_for(:controller => "artworks", :action => "show_image", :id => artwork.id) %>)	        
 	         repeat-x top center;">
+
+
+
 	            <!-- <img class="asset left-30 sp600 t120 z1" src="/assets/clean/slides/scene3/canon.png" /> -->
 
 	              <%= link_to artwork.title, artwork %>
