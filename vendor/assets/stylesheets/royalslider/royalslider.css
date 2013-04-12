@@ -290,7 +290,7 @@ img.rsImg {
 }
 
 .slide1 {
-	background: url(backgrounds/cameras/hd_camera_wallpaper-60.png) no-repeat;
+	/*background: url(backgrounds/cameras/hd_camera_wallpaper-60.png) no-repeat;*/
   /*background: #f06b50;*/
 
 }
@@ -298,7 +298,7 @@ img.rsImg {
   top: 36%;
 }
 .slide2 {
-	background: url(backgrounds/cameras/polaroid-1600x1200.jpg) no-repeat;
+	/*background: url(backgrounds/cameras/polaroid-1600x1200.jpg) no-repeat;*/
     /*background: #ffbc11;*/
     color:#fff;
 }
@@ -312,7 +312,7 @@ img.rsImg {
    line-height: 66px;
 }
 .slide3 {
-	background: url(backgrounds/photography/sunset-female-photographer.jpg) no-repeat;
+	/*background: url(backgrounds/photography/sunset-female-photographer.jpg) no-repeat;*/
     /*background: #45aab8;*/
     color:#FFF;
 }
