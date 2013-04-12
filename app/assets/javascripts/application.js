@@ -18,6 +18,6 @@
 //= require clean/theme
 //= require clean/jquery.isotope
 //= require jquery.tablesorter
-//= require jquery.royalslider
+//= require jquery.royalslider.min
 //= require custom
 

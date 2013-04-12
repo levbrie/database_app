@@ -1,101 +1,131 @@
-<p id="notice"><%= notice %></p>
+</div><!-- end container to make dark bg -->
+<div class="dark_bg">
+  <div class="container">
+    <div class="row">
+      <h1><%= @artwork.title %></h1>
+      <div class="span6">
+        <div class="tabbable"> <!-- Only required for left/right tabs -->
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">About this Artwork</a></li>
+            <li><a href="#tab2" data-toggle="tab">More Info</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+             <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Art:</b>
-  <%= @artwork.art_id %>
-</p>
+              <p>
+                <b>Art:</b>
+                <%= @artwork.art_id %>
+              </p>
 
-<p>
-  <b>Title:</b>
-  <%= @artwork.title %>
-</p>
+              <p>
+                <b>Title:</b>
+                <%= @artwork.title %>
+              </p>
 
-<p>
-  <b>Artist(s):</b><br>
-  <% @artwork.artistsBy.each do |a| %>
-  
-  <%=link_to("Name: "+ a.first_name+" "+a.last_name, artist_path(a.artist_id), :class=>"") %><br>
-  Pseudonym: <%= a.pseudonym %><br>
-  Birth: <%= a.birth.strftime("%Y") %> Death: <%= a.death.strftime("%Y") %><br>
-  <% end %>
-</p>
-
-
-<p>
-  <b>Value:</b>
-  <%= @artwork.value %>
-</p>
-
-<%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => @artwork.id) %>
-
-<p>
-  <b>Condition:</b>
-  <%= @artwork.condition %>
-</p>
-
-<p>
-  <b>Collection:</b>
-  <%= @artwork.getCollection.title %>
-</p>
-
-<p>
-  <b>Purchase date:</b>
-  <%= @artwork.purchase_date.strftime("%Y") %>
-</p>
-
-<p>
-  <b>Creation date:</b>
-  <%= @artwork.creation_date.strftime("%Y") %>
-</p>
+              <p>
+                <b>Artist(s): </b>
+                <% @artwork.artistsBy.each do |a| %>
+                
+                <%=link_to(a.first_name+" "+a.last_name, artist_path(a.artist_id), :class=>"") %><br>
+                <% if a.pseudonym? %>
+                Pseudonym: <%= a.pseudonym %><br>
+                <% end %>
+                <p>Birth: <%= a.birth.strftime("%Y") %></p> 
+                <p>Death: <%= a.death.strftime("%Y") %></p>
+                <% end %>
+              </p>
 
 
-<p>
-  <b>Physical Characteristics:</b>
-  <% phys = @artwork.getPhysicalCharacteristics  %>
-  <% if phys %>
-  <ul>
-    <li>Height: <%= phys.height %></li>
-    <li>Width: <%= phys.width %></li>
-    <li>Weight: <%= phys.weight %></li>
-    <li>Volume: <%= phys.volume %></li>
-  </ul>
-  <% end %>
-</p>
+              <p>
+                <b>Value:</b>
+                <%= number_to_currency @artwork.value %>
+              </p>
 
-<p>
-  <b>Reference Material(s):</b><br>
-  <% @artwork.referencedBy.each do |r| %>
-  <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
-  <% end %>
-</p>
+              <p>
+                <b>Condition:</b>
+                <%= @artwork.condition %>
+              </p>
 
+              <p>
+                <b>Collection:</b>
+                <%= @artwork.getCollection.title %>
+              </p>
+            </div>
+            <div class="tab-pane" id="tab2">
+              <p>
+                <b>Purchase date:</b>
+                <%= @artwork.purchase_date.strftime("%Y") %>
+              </p>
 
-
-
-<p>
-  <b>Exhibitions:</b><br>
-  <% @artwork.exhibitedIn.each do |e| %>
-  Title: <%=link_to(e.title + ", " + e.start_date.strftime("%d %b %Y") + " - " + e.end_date.strftime("%d %b %Y"), exhibition_path(e.exhibition_id), :class=>"") %><br>
-  <% end %>
-</p>
-
-<p>
-  <b>Categories:</b>
-  <% @artwork.artworkcategories.each do |ar| %>
-  <%= ar.cat_name %>
-  <% end %>
-</p>
-
-<p>
-  <b>Movements:</b>
-
-  <% @artwork.artworkmovements.each do |am| %>
-  <%= am.title %>
-  <% end %>
-
-</p>
+              <p>
+                <b>Creation date:</b>
+                <%= @artwork.creation_date.strftime("%Y") %>
+              </p>
 
 
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+              <p>
+                <b>Physical Characteristics:</b>
+                <% phys = @artwork.getPhysicalCharacteristics  %>
+                <% if phys %>
+                <ul>
+                  <li>Height: <%= phys.height %></li>
+                  <li>Width: <%= phys.width %></li>
+                  <li>Weight: <%= phys.weight %></li>
+                  <li>Volume: <%= phys.volume %></li>
+                </ul>
+                <% end %>
+              </p>
 
+              <p>
+                <b>Reference Material(s):</b><br>
+                <% @artwork.referencedBy.each do |r| %>
+                <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
+                <% end %>
+              </p>
+
+
+
+
+              <p>
+                <b>Exhibitions:</b><br>
+                <% @artwork.exhibitedIn.each do |e| %>
+                Title: <%=link_to(e.title + ", " + e.start_date.strftime("%d %b %Y") + " - " + e.end_date.strftime("%d %b %Y"), exhibition_path(e.exhibition_id), :class=>"") %><br>
+                <% end %>
+              </p>
+
+              <p>
+                <b>Categories:</b>
+                <% @artwork.artworkcategories.each do |ar| %>
+                <%= ar.cat_name %>
+                <% end %>
+              </p>
+
+              <p>
+                <b>Movements:</b>
+
+                <% @artwork.artworkmovements.each do |am| %>
+                <%= am.title %>
+                <% end %>
+
+              </p>
+            </div>
+          </div>
+        </div>
+ 
+
+
+
+
+        <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+        <%= link_to 'Back', artworks_path %>        
+      </div>
+      <div class="span6">
+        <%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => @artwork.id) %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div> <!-- empty div to cover default container close -->
