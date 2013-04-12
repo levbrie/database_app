@@ -1,6 +1,8 @@
-<h1>Listing categories</h1>
 
-<table>
+  <h1>Listing categories</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
   <tr>
     <th>Cat name</th>
     <th>Genre</th>
@@ -9,7 +11,8 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @categories.each do |category| %>
   <tr>
     <td><%= category.cat_name %></td>
@@ -20,6 +23,7 @@
     <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

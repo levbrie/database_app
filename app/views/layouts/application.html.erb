@@ -23,8 +23,9 @@
 				<%= msg  %>
 			</div>
 			<% end %>
-		</div>
+
 		<%= yield %>
+	</div>
 		<%= render 'layouts/footer' %>
 			<!-- add debug info to site layout to display useful info about
 				each page using the built-in debug method and params variable, 
@@ -56,32 +57,6 @@
 					</div>
 				</div>
 				<% end %>
-				    <script type="text/javascript">
-        $(function(){
 
-            var $container = $('#gallery_container'),
-                  $filters = $("#filters a");
-        
-            $container.imagesLoaded( function(){
-                $container.isotope({
-                    itemSelector : '.photo',
-                    masonry: {
-                        columnWidth: 102
-                    }
-                });
-            });
-
-            // filter items when filter link is clicked
-            $filters.click(function() {
-                $filters.removeClass("active");
-                $(this).addClass("active");
-                var selector = $(this).data('filter');
-                $container.isotope({ filter: selector });
-                return false;
-            });
-        
-        
-        });
-    </script>
 			</body>
 			</html>

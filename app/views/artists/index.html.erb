@@ -1,6 +1,7 @@
 <h1>Listing artists</h1>
 
-<table>
+<table class="table table-striped table-hover">
+  <thead>
   <tr>
     <th>Artist</th>
     <th>First name</th>
@@ -14,22 +15,24 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @artists.each do |artist| %>
   <tr>
-    <td><%= artist.artist_id %></td>
-    <td><%= artist.first_name %></td>
-    <td><%= artist.last_name %></td>
-    <td><%= artist.pseudonym %></td>
-    <td><%= artist.nationality %></td>
-    <td><%= artist.birth %></td>
-    <td><%= artist.death %></td>
-    <td><%= artist.url %></td>
+    <td><%= link_to artist.artist_id, artist %></td>
+    <td><%= link_to artist.first_name, artist %></td>
+    <td><%= link_to artist.last_name, artist %></td>
+    <td><%= link_to artist.pseudonym, artist %></td>
+    <td><%= link_to artist.nationality, artist %></td>
+    <td><%= link_to artist.birth, artist %></td>
+    <td><%= link_to artist.death, artist %></td>
+    <td><%= link_to artist.url, artist.url %></td>
     <td><%= link_to 'Show', artist %></td>
     <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
     <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

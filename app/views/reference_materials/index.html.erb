@@ -1,17 +1,20 @@
-<h1>Listing reference_materials</h1>
 
-<table>
-  <tr>
-    <th>Ref</th>
-    <th>Title</th>
-    <th>Abstract</th>
-    <th>Content</th>
-    <th>Url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <h1>Listing reference_materials</h1>
 
+<table class="table table-striped table-hover table-bordered">
+    <thead>
+        <tr>
+        <th>Ref</th>
+        <th>Title</th>
+        <th>Abstract</th>
+        <th>Content</th>
+        <th>Url</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        </tr>
+    </thead>
+<tbody>
 <% @reference_materials.each do |reference_material| %>
   <tr>
     <td><%= reference_material.ref_id %></td>
@@ -24,6 +27,7 @@
     <td><%= link_to 'Destroy', reference_material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

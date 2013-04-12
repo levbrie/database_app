@@ -1,6 +1,8 @@
-<h1>Listing collections</h1>
 
-<table>
+  <h1>Listing collections</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
   <tr>
     <th>Collection</th>
     <th>Title</th>
@@ -12,7 +14,8 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @collections.each do |collection| %>
   <tr>
     <td><%= collection.collection_id %></td>
@@ -26,6 +29,7 @@
     <td><%= link_to 'Destroy', collection, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

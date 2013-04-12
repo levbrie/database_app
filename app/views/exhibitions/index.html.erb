@@ -1,6 +1,8 @@
-<h1>Listing exhibitions</h1>
 
-<table>
+  <h1>Listing exhibitions</h1>
+
+<table class="table table-striped table-hover table-bordered">
+  <thead>
   <tr>
     <th>Exhibition</th>
     <th>Title</th>
@@ -13,7 +15,8 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @exhibitions.each do |exhibition| %>
   <tr>
     <td><%= exhibition.exhibition_id %></td>
@@ -28,6 +31,7 @@
     <td><%= link_to 'Destroy', exhibition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />

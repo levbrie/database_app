@@ -31,9 +31,10 @@
 }
 #portfolio #gallery_container {
 	margin-bottom: 50px;
+	padding: 30px;
 }
 #portfolio #gallery_container .photo {
-	width: 285px;
+	width: 345px;
 	margin: 5px;
 	float: left;
 	position: relative;
@@ -56,7 +57,7 @@
 	border-radius: 5px;
 	height: 100%;
 	padding: 0px 20px;
-	width: 245px;
+	width: 305px;
 	background: rgba(17, 137, 217, 0.5);
 	-webkit-transition: opacity .25s ease-in-out;
     -moz-transition: opacity .25s ease-in-out;
