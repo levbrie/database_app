@@ -42,6 +42,14 @@ class Exhibition < ActiveRecord::Base
 		listback
 	end
 
+	def randArtFrom
+		self.artworksIn.offset(rand(self.artworksIn.count)).first
+	end
+
+	def randExhibition
+		Exhibition.offset(rand(Exhibition.count)).first
+	end
+
 
 	def getOrganizer
 		Organization.find(self.organizer)
