@@ -40,12 +40,12 @@
 
 <p>
   <b>Purchase date:</b>
-  <%= @artwork.purchase_date %>
+  <%= @artwork.purchase_date.strftime("%Y") %>
 </p>
 
 <p>
   <b>Creation date:</b>
-  <%= @artwork.creation_date %>
+  <%= @artwork.creation_date.strftime("%Y") %>
 </p>
 
 
@@ -62,6 +62,14 @@
   <% end %>
 </p>
 
+<p>
+  <b>Reference Material(s):</b><br>
+    <% @artwork.referencedBy.each do |r| %>
+      <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
+    <% end %>
+</p>
+
+<p>
 
 <p>
   <b>Categories:</b>

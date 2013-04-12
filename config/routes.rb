@@ -1,4 +1,7 @@
 DatabaseApp::Application.routes.draw do
+  resources :art_referred_bies
+
+
   resources :artist_referred_bies
 
 

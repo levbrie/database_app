@@ -1,0 +1,2 @@
+module ArtReferredBiesHelper
+end

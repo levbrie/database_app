@@ -16,6 +16,8 @@ class Artwork < ActiveRecord::Base
 	has_many :artwork_created_bies
 	has_many :artists, :through => :artwork_created_bies #bad name because of rails
 
+	has_many :art_referred_bies
+	has_many :reference_materials, :through => :art_referred_bies #bad name because of rails
 
 
 
@@ -72,6 +74,22 @@ class Artwork < ActiveRecord::Base
 		listback
 	end
 
+
+	def referencedBy
+	listback = []
+	@ref = ReferenceMaterial.all
+	@artreffed = ArtReferredBy.all
+	@ref.each do |r|
+		@artreffed.each do |ar|
+			if self.art_id == ar.art_id
+				if ar.ref_id == r.ref_id
+					listback << r
+				end
+			end
+		end
+	end
+	listback
+end
 
 	
 

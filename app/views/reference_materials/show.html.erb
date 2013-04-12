@@ -22,8 +22,29 @@
 
 <p>
   <b>Url:</b>
-  <%= @reference_material.url %>
+  <%= link_to @reference_material.url, @reference_material.url %>
 </p>
+
+
+<p>
+  <b>Artwork(s) Referrenced:</b><br>
+  <% @reference_material.artworksRefferenced.each do |ar| %>
+      <%=link_to("Title: "+ ar.title+", "+ ar.creation_date.strftime("%Y"), artwork_path(ar.art_id), :class=>"") %><br>
+    <% end %>
+</p>
+<p>
+
+  <b>Artist(s) Referrenced:</b><br>
+    <% @reference_material.artistsRefferenced.each do |a| %>
+      <%=link_to("Name: "+ a.first_name+" "+ a.last_name+", "+ a.pseudonym, artist_path(a.artist_id), :class=>"") %><br>
+    <% end %>
+</p>
+
+<p>
+  <b>Exhibitions Referrenced:</b><br>
+  
+</p>
+
 
 
 <%= link_to 'Edit', edit_reference_material_path(@reference_material) %> |
