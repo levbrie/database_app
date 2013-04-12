@@ -1,4 +1,4 @@
-<%= form_for(@exhibition) do |f| %>
+<%= form_for @exhibition, :html => { :class => 'form-horizontal' } do |f| %>
   <% if @exhibition.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@exhibition.errors.count, "error") %> prohibited this exhibition from being saved:</h2>
@@ -39,7 +39,7 @@
     <%= f.label :organizer %><br />
     <%= f.number_field :organizer %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
   </div>
 <% end %>

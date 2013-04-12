@@ -36,6 +36,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+# gem 'ransack'
 # gem 'fancybox2-rails', '~> 0.2.4'
 
 # To use ActiveModel has_secure_password
