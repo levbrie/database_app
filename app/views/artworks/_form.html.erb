@@ -39,6 +39,17 @@
     <%= f.label :creation_date %><br />
     <%= f.date_select :creation_date %>
   </div>
+
+
+  
+<%= f.fields_for :physical_characteristic do |builder| %>
+  <%= render 'physical_characteristic_fields', f: builder %>
+<% end %>
+<%= link_to_add_fields "Add Physical Characteristics", f, :physical_characteristic %>
+
+
+
+
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
   </div>

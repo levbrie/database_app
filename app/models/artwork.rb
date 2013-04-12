@@ -3,9 +3,10 @@ class Artwork < ActiveRecord::Base
 	set_primary_key "art_id"
 	attr_accessible :art_id, :collection_id, :condition, 
 	:image, :creation_date, :purchase_date, 
-	:title, :value
+	:title, :value, :physical_characteristic_attributes
 
 
+	
 
 	has_many :artcategories
 	has_many :categories, :through => :artcategories
@@ -20,6 +21,14 @@ class Artwork < ActiveRecord::Base
 	has_many :reference_materials, :through => :art_referred_bies #bad name because of rails
 
 
+
+
+	########### Nested Forms ##############
+	has_one :physical_characteristic, :class_name => "PhysicalCharacteristic", :foreign_key => "art_id"
+	accepts_nested_attributes_for :physical_characteristic, allow_destroy: true
+
+
+	#######################################
 
 
 	############  Joins #####################
