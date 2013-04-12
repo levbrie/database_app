@@ -40,6 +40,14 @@ class Artwork < ActiveRecord::Base
 		listback
 	end
 
+	def catString
+		x = ""
+		self.artworkcategories.each do |f|
+			x = x + " " + f.cat_name
+		end
+		x
+	end
+
 
 	def artworkmovements
 		listback = []
