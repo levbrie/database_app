@@ -1,7 +1,4 @@
 DatabaseApp::Application.routes.draw do
-  resources :art_categories
-
-
   resources :categories
 
 
