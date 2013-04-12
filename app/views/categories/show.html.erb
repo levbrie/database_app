@@ -16,5 +16,18 @@
 </p>
 
 
+<p>
+  <b>Artworks:</b>
+
+  <% @category.artworksIn.each do |a| %>
+  <%= a.title %>
+  <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %>
+
+  <% end %>
+
+</p>
+
+
+
 <%= link_to 'Edit', edit_category_path(@category) %> |
 <%= link_to 'Back', categories_path %>
