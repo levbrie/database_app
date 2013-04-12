@@ -30,6 +30,54 @@
 <% end %>
 </table>
 
+<div id="portfolio">
+    <div class="container">
+        <div class="section_header">
+            <h3>Artworks</h3>
+        </div>
+        <div class="row">
+            <div class="span12">
+                <div id="filters_container">
+                    <ul id="filters">
+                        <li><a href="#" data-filter="*" class="active">All</a></li>
+                        <li class="separator">/</li>
+                        <li><a href="#" data-filter=".art">Art</a></li>
+                        <li class="separator">/</li>
+                        <li><a href="#" data-filter=".ilustration">Illustration</a></li>
+                        <li class="separator">/</li>
+                        <li><a href="#" data-filter=".print">Print</a></li>
+                        <li class="separator">/</li>
+                        <li><a href="#" data-filter=".web">Web</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>            
+        <div class="row">
+            <div class="span12">
+                <div id="gallery_container">
+                    <% @artworks.each do |artwork| %>
+                    <div class="photo print">
+                        <%= image_tag url_for(:controller => "artworks", :action => "show_image", :id => artwork.id) %>
+                        <a href="<%= artwork_path(artwork) %>" class="mask">
+                            <h3><%= artwork.title %></h3>
+                            <small>
+                                Purchased on <%= artwork.purchase_date.strftime("%Y") %><br>
+                                Condition: <%= artwork.condition %><br>
+                                Id: <%= artwork.collection_id %><br>
+                                Value: <%= artwork.value %><br>
+                            </small>
+                            <div class="more">+</div>
+                        </a>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>            
+             
+
+
 <br />
 
 <%= link_to 'New Artwork', new_artwork_path %>
