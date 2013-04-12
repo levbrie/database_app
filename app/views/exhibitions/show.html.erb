@@ -1,60 +1,100 @@
-<p id="notice"><%= notice %></p>
+</div><!-- end container to make dark bg -->
+<div class="dark_bg">
+  <div class="container">
+    <div class="row">
+      <h1><%= @exhibition.title %></h1>
+      <h2>An Exhibition of art from The <%= @exhibition.getOrganizer.title %></h2>
+      <div class="span6">
+        <div class="tabbable"> <!-- Only required for left/right tabs -->
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab1" data-toggle="tab">About the Exhibition</a></li>
+            <li><a href="#tab2" data-toggle="tab">Additional Info</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="tab1">
+              <p id="notice"><%= notice %></p>
+              <h4><%= @exhibition.start_date.strftime("%m/%d/%Y") %></h4>
+              <p>
+                <b>Exhibition:</b>
+                <%= @exhibition.exhibition_id %>
+              </p>
 
-<p>
-  <b>Exhibition:</b>
-  <%= @exhibition.exhibition_id %>
-</p>
+              <p>
+                <b>Title:</b>
+                <%= @exhibition.title %>
+              </p>
 
-<p>
-  <b>Title:</b>
-  <%= @exhibition.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @exhibition.description %>
-</p>
-
-<p>
-  <b>Start date:</b>
-  <%= @exhibition.start_date.strftime("%m/%d/%Y") %>
-</p>
-
-<p>
-  <b>End date:</b>
-  <%= @exhibition.end_date.strftime("%m/%d/%Y") %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @exhibition.location %>
-</p>
-
-<p>
-  <b>Organizer:</b>
-  <%=link_to(@exhibition.getOrganizer.title, organization_path(@exhibition.organizer), :class=>"") %><br>
-  <%= @exhibition.getOrganizer.title %>
-</p>
-
-<p>
-  <b>Reference Material(s):</b><br>
-    <% @exhibition.referencedBy.each do |r| %>
-      <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
-    <% end %>
-</p>
+              <p>
+                <b>Description:</b>
+                <%= @exhibition.description %>
+              </p>
 
 
+            </div>
+            <div class="tab-pane" id="tab2">
+              <p>
+                <b>Start date:</b>
+                <%= @exhibition.start_date.strftime("%m/%d/%Y") %>
+              </p>
+              <p>
+                <b>End date:</b>
+                <%= @exhibition.end_date.strftime("%m/%d/%Y") %>
+              </p>
 
-<p>
-  <b>Artworks:</b><br>
+              <p>
+                <b>Location:</b>
+                <%= @exhibition.location %>
+              </p>
 
-  <% @exhibition.artworksIn.each do |a| %>
-  <%= a.title %><br>
-  <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %><br>
+              <p>
+                <b>Organizer:</b>
+                <%=link_to(@exhibition.getOrganizer.title, organization_path(@exhibition.organizer), :class=>"") %><br>
+                <%= @exhibition.getOrganizer.title %>
+              </p>
 
-  <% end %>
+              <p>
+                <b>Reference Material(s):</b><br>
+                  <% @exhibition.referencedBy.each do |r| %>
+                    <%=link_to("Title: "+ r.title, reference_material_path(r.ref_id), :class=>"") %><br>
+                  <% end %>
+              </p>
+            </div>
+          </div>
+        </div>
+ 
 
-</p>
+
+
 
 <%= link_to 'Edit', edit_exhibition_path(@exhibition) %> |
-<%= link_to 'Back', exhibitions_path %>
+<%= link_to 'Back', exhibitions_path %>     
+      </div>
+      <div class="span6">
+        <p>
+          <b>Featured Artworks:</b>
+
+          <% @exhibition.artworksIn.each do |a| %>
+          <%= a.title %><br>
+          <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %><br>
+
+          <% end %>
+
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div> <!-- empty div to cover default container close -->
+
+
+
+
+
+
+
+
+
+
+

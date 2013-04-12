@@ -19,20 +19,20 @@ jQuery(document).ready(function($) {
       delay: 400
     }
   });
-     $('a[href*=#feature-set]').click(function() {
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-      && location.hostname == this.hostname) {
-        var $target = $(this.hash);
-        $target = $target.length && $target
-        || $('[name=' + this.hash.slice(1) +']');
-        if ($target.length) {
-          // var targetOffset = $target.offset().top;
-          var targetOffset = $(window).height() - 220;
-          $('html,body')
-          .animate({scrollTop: targetOffset}, {duration: 1000, easing: 'easeInOutExpo'});
-         return false;
-        }
+  $('a[href*=#feature-set]').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+    && location.hostname == this.hostname) {
+      var $target = $(this.hash);
+      $target = $target.length && $target
+      || $('[name=' + this.hash.slice(1) +']');
+      if ($target.length) {
+        // var targetOffset = $target.offset().top;
+        var targetOffset = $(window).height() - 220;
+        $('html,body')
+        .animate({scrollTop: targetOffset}, {duration: 1000, easing: 'easeInOutExpo'});
+       return false;
       }
-    });
+    }
+  });
 });
 
