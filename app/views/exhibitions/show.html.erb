@@ -32,7 +32,8 @@
 
 <p>
   <b>Organizer:</b>
-  <%= @exhibition.organizer %>
+  <%=link_to(@exhibition.getOrganizer.title, organization_path(@exhibition.organizer), :class=>"") %><br>
+  <%= @exhibition.getOrganizer.title %>
 </p>
 
 <p>

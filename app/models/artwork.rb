@@ -108,6 +108,10 @@ class Artwork < ActiveRecord::Base
 		listback
 	end
 
+
+	def getCollection
+		Collection.find(self.collection_id)
+	end
 	
 
 

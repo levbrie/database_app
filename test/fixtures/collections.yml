@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  collection_id: 1
+  title: MyString
+  manager: MyString
+  value: 1
+  belongs_id: 1
+  loaned_id: 1
+
+two:
+  collection_id: 1
+  title: MyString
+  manager: MyString
+  value: 1
+  belongs_id: 1
+  loaned_id: 1

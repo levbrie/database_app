@@ -6,6 +6,7 @@ class Exhibition < ActiveRecord::Base
 	has_many :exhibition_referred_bies
 	has_many :reference_materials, :through => :exhibition_referred_bies #bad name because of rails
 
+	belongs_to :organization
 
 
 	def referencedBy
@@ -40,5 +41,13 @@ class Exhibition < ActiveRecord::Base
 		end
 		listback
 	end
+
+
+	def getOrganizer
+		Organization.find(self.organizer)
+	end
+
+
+
 
 end

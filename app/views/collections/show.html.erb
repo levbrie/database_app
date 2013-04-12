@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Collection:</b>
+  <%= @collection.collection_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @collection.title %>
+</p>
+
+<p>
+  <b>Manager:</b>
+  <%= @collection.manager %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @collection.value %>
+</p>
+
+<p>
+  <b>Belongs To:</b>
+  <% if @collection.belongs_id %>
+  <%= @collection.getBelongsTo.title %>
+  <% end %>
+</p>
+
+<p>
+  <b>Loaned To:</b>
+   <% if @collection.loaned_id %>
+      <%= @collection.getLoanedTo.title %>
+  <% end %>
+</p>
+
+
+
+
+<p>
+  <b>Artworks:</b><br>
+  <%# if @collection.getArtworks.blank? %>
+  <% @collection.getArtworks.each do |a| %>
+
+  <%= a.title %><br>
+  <%=link_to(image_tag(url_for(:controller => "artworks", :action => "show_image", :id => a.id)), artwork_path(a.art_id), :class=>"") %><br>
+  <%# end %>
+  <% end %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_collection_path(@collection) %> |
+<%= link_to 'Back', collections_path %>

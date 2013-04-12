@@ -1,4 +1,10 @@
 DatabaseApp::Application.routes.draw do
+  resources :organizations
+
+
+  resources :collections
+
+
   resources :artwork_featured_in_exhibitions
 
 
